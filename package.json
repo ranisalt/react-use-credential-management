@@ -1,0 +1,34 @@
+{
+  "name": "react-use-credential-management",
+  "version": "0.1.0",
+  "description": "React hook to leverage Credential Management API",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "repository": "https://github.com/ranisalt/react-use-credential-management",
+  "scripts": {
+    "build": "tsc -p .",
+    "clean": "rimraf lib",
+    "lint": "tslint 'src/*.{ts,tsx}' -t verbose",
+    "posttest": "yarn run check",
+    "prepare": "yarn run build",
+    "pretest": "yarn run build"
+  },
+  "author": "Ranieri Althoff <ranisalt@gmail.com>",
+  "files": [
+    "lib/"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.0.3",
+    "@types/react": "^16.9.2",
+    "@types/webappsec-credential-management": "^0.5.1",
+    "react": "^16.9.0",
+    "rimraf": "^3.0.0",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~3.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0"
+  }
+}
