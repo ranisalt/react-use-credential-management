@@ -42,7 +42,7 @@ Where `id` is whatever unique value you choose to identify users, be it email, u
 Use `login` to try stored credentials. Pass `'silent'` to prevent asking the user for permission, `'optional'` to optionally ask for consent if needed (otherwise, behaves as `'silent'`), and `'required'` to unconditionally ask for consent.
 
 ```ts
-const { isLoading, login } = useAuth()
+const { isLoading, login } = useCredentialManagement()
 
 if (isLoading) {
   return null
@@ -54,7 +54,7 @@ return <button onClick={login('optional')}>Login</button>
 Use `logout` to require user consent next login:
 
 ```ts
-const { isLoading, logout } = useAuth()
+const { isLoading, logout } = useCredentialManagement()
 
 if (isLoading) {
   return null
@@ -66,7 +66,12 @@ return <button onClick={logout}>Login</button>
 Use `isAuthenticated` to check if user is already logged in. You can leverage it to select between login and logout buttons:
 
 ```ts
-const { isAuthenticated, isLoading, logout, silentLogin } = useAuth()
+const {
+  isAuthenticated,
+  isLoading,
+  logout,
+  silentLogin,
+} = useCredentialManagement()
 
 if (isLoading) {
   return null
@@ -82,7 +87,7 @@ return isAuthenticated ? (
 Use `signup` to create new credentials:
 
 ```ts
-const { isLoading, signup } = useAuth()
+const { isLoading, signup } = useCredentialManagement()
 const [isFormOpen, setFormOpen] = useState(false)
 
 if (isLoading) {
@@ -130,7 +135,13 @@ return (
 Complete example:
 
 ```ts
-const { isAuthenticated, isLoading, login, logout, signup } = useAuth()
+const {
+  isAuthenticated,
+  isLoading,
+  login,
+  logout,
+  signup,
+} = useCredentialManagement()
 const [isFormOpen, setFormOpen] = useState(false)
 
 if (isLoading) {
